@@ -13,6 +13,7 @@ public class IAStates : AIPath
     bool destinationReached;
 
     //Idle es caminar por ahí, no estar quieto
+    [System.Serializable]
     public enum IAStatus { Idle, Chasing, Investigating}
     public IAStatus state = new IAStatus();
 
