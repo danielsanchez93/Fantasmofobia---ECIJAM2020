@@ -24,7 +24,7 @@ public class CamaraNPC : MonoBehaviour
         Debug.Log("InRange");
         if (collision.CompareTag("Player") && timeToShoot >=5)
         {
-            GetComponent<PolygonCollider2D>().enabled = false;
+            //GetComponent<PolygonCollider2D>().enabled = false;
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position, 
                 player.transform.position - transform.position, 
@@ -43,7 +43,7 @@ public class CamaraNPC : MonoBehaviour
                 {
                     Debug.Log("got the player");
                     player.GetComponent<SimpleMovement>().Freeze();
-                    GetComponent<PolygonCollider2D>().enabled = true;
+                    //GetComponent<PolygonCollider2D>().enabled = true;
                 } 
             }
         }

@@ -10,7 +10,7 @@ public class MotionSensor : MonoBehaviour
     {
         if (player.GetComponent<SimpleMovement>().detectedBysensor)
         {
-            GetComponent<PolygonCollider2D>().enabled = false;
+           // GetComponent<PolygonCollider2D>().enabled = false;
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position,
                 player.transform.position - transform.position,
@@ -28,23 +28,27 @@ public class MotionSensor : MonoBehaviour
                 if (hit.collider.tag == "Player")
                 {
                     Debug.Log("got the player");
-                    GetComponent<PolygonCollider2D>().enabled = true;
-                    player.GetComponent<SimpleMovement>().detectedBysensor = false;
+                    //GetComponent<PolygonCollider2D>().enabled = true;
+                    //player.GetComponent<SimpleMovement>().detectedBysensor = false;
                 }
             }
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             player.GetComponent<SimpleMovement>().detectedBysensor = true;
+            Debug.Log(player.GetComponent<SimpleMovement>().detectedBysensor);
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        //player.GetComponent<SimpleMovement>().detectedBysensor = false;
-        Debug.Log(player.GetComponent<SimpleMovement>().detectedBysensor);
+        if (collision.CompareTag("Player"))
+        {
+            player.GetComponent<SimpleMovement>().detectedBysensor = false;
+            Debug.Log(player.GetComponent<SimpleMovement>().detectedBysensor);
+        }
     }
 }
