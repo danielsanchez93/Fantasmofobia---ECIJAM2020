@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: d648f13a9a954974592df5bfc0d7b2e0
+guid: 494b32309e430434ab61a601266c0cf8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4375890757259982687
-    second: planos_videojuego_0
+      213: 5107974429910038362
+    second: personas_0
+  - first:
+      213: 4841146953401977488
+    second: personas_1
+  - first:
+      213: -5388339737536514512
+    second: personas_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -34,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -64,7 +70,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -76,7 +82,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,7 +106,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -124,7 +130,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -138,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: planos_videojuego_0
+      name: personas_0
       rect:
         serializedVersion: 2
-        x: 431
-        y: 96
-        width: 301
-        height: 373
+        x: 69
+        y: 418
+        width: 181
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +158,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f57756295794abc30800000000000000
-      internalID: 4375890757259982687
+      spriteID: a57f0984eab23e640800000000000000
+      internalID: 5107974429910038362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personas_1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 434
+        width: 141
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a4dfe21853f2340800000000000000
+      internalID: 4841146953401977488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personas_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 114
+        width: 136
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036b30fae85c835b0800000000000000
+      internalID: -5388339737536514512
       vertices: []
       indices: 
       edges: []
@@ -161,7 +209,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c0113ac534dcba04d92249ff2bee355c
+    spriteID: da438a4b32c839344af397f1d4caaffe
     internalID: 0
     vertices: []
     indices: 

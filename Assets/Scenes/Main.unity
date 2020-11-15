@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 497538458}
   - component: {fileID: 497538457}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +582,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 768eb784e0bba7543a2f4a9043bc3fe2, type: 3}
+  m_Sprite: {fileID: 4375890757259982687, guid: d648f13a9a954974592df5bfc0d7b2e0,
+    type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -601,8 +602,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497538456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.64, y: 0.67, z: -1.5084656}
-  m_LocalScale: {x: 23.563196, y: 12.743959, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 13.709303, y: 7.414563, z: 0.58181}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1020,7 +1021,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.24
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}

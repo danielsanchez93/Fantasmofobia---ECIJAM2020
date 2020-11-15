@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1740298995703866460}
   - component: {fileID: 1740298995703866463}
   m_Layer: 2
-  m_Name: CrucifijoNPC
+  m_Name: CrucifijoIA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,8 +161,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 768eb784e0bba7543a2f4a9043bc3fe2, type: 3}
-  m_Color: {r: 0.990566, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -5388339737536514512, guid: 494b32309e430434ab61a601266c0cf8,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -268,7 +269,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.36, y: 1.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
