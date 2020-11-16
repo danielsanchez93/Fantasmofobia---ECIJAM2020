@@ -6,6 +6,8 @@ public class MotionSensor : MonoBehaviour
 {
     public GameObject player;
     public float visionRadius = 2.5f;
+    public IAStates[] enemies;
+
     private void Update()
     {
         if (player.GetComponent<SimpleMovement>().detectedBysensor)
@@ -28,6 +30,10 @@ public class MotionSensor : MonoBehaviour
                 if (hit.collider.tag == "Player")
                 {
                     Debug.Log("got the player");
+                    foreach (var item in enemies)
+                    {
+                        item.ChasePJ();
+                    }
                     //GetComponent<PolygonCollider2D>().enabled = true;
                     //player.GetComponent<SimpleMovement>().detectedBysensor = false;
                 }
@@ -39,7 +45,7 @@ public class MotionSensor : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             player.GetComponent<SimpleMovement>().detectedBysensor = true;
-            Debug.Log(player.GetComponent<SimpleMovement>().detectedBysensor);
+            Debug.Log("Sensor"+player.GetComponent<SimpleMovement>().detectedBysensor);
         }
     }
 
@@ -48,7 +54,7 @@ public class MotionSensor : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             player.GetComponent<SimpleMovement>().detectedBysensor = false;
-            Debug.Log(player.GetComponent<SimpleMovement>().detectedBysensor);
+            Debug.Log("sensor"+player.GetComponent<SimpleMovement>().detectedBysensor);
         }
     }
 }

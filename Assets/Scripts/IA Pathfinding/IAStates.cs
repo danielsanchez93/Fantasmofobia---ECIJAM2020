@@ -40,7 +40,7 @@ public class IAStates : AIPath
         }
         else
         {
-            StartCoroutine(Cooldown(4));
+            StartCoroutine(Cooldown(2));
         }
     }
 
@@ -57,6 +57,7 @@ public class IAStates : AIPath
     {
         state = IAStatus.Chasing;
         destinationSetter.target = player;
+        StartCoroutine(StopChasing());
     }
 
     public void GoToWalk()
@@ -81,6 +82,12 @@ public class IAStates : AIPath
                 GoToWalk();
                 break;
         }
+    }
+
+    IEnumerator StopChasing() 
+    {
+        yield return new WaitForSeconds(10f);
+        GoToWalk();
     }
 
     

@@ -11,7 +11,7 @@ public class CamaraNPC : MonoBehaviour
     private void Update()
     {
         timeToShoot += Time.deltaTime;
-        if (timeToShoot >=6)
+        if (timeToShoot >=6.5)
         {
             timeToShoot = 0;
         }
@@ -21,9 +21,11 @@ public class CamaraNPC : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("InRange");
-        if (collision.CompareTag("Player") && timeToShoot >=5)
+        Debug.Log("InRangeCamera");
+        Debug.Log(collision.tag);
+        if (timeToShoot >=5)
         {
+            Debug.Log("???");
             //GetComponent<PolygonCollider2D>().enabled = false;
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position, 
@@ -33,8 +35,8 @@ public class CamaraNPC : MonoBehaviour
 
             Vector3 forward = transform.TransformDirection(player.transform.position - transform.position);
             Debug.DrawRay(transform.position, forward, Color.red);
- 
 
+            Debug.Log(hit.collider.tag);
             if (hit.collider != null)
             {
                 Debug.Log("is not null");

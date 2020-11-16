@@ -155,3 +155,4 @@ MonoBehaviour:
   lightWaitTime: 0.1
   LightCooldown: 0.01
   IsRepaired: 0
+  emergencypos: {fileID: 0}
