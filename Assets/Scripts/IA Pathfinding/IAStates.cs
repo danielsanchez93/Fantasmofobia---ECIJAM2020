@@ -8,6 +8,7 @@ public class IAStates : AIPath
     
     Rigidbody2D rb;
     AIDestinationSetter destinationSetter;
+    SitesManager sitesM;
     Transform player;
 
     bool destinationReached;
@@ -27,6 +28,8 @@ public class IAStates : AIPath
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         destinationSetter = GetComponent<AIDestinationSetter>();
+        sitesM = FindObjectOfType<SitesManager>();
+        GoToWalk();
     }
 
     public override void OnTargetReached()
@@ -37,9 +40,7 @@ public class IAStates : AIPath
         }
         else
         {
-            //acción deseada
-            //timer
-            StartCoroutine(Cooldown(2));
+            StartCoroutine(Cooldown(4));
         }
     }
 
@@ -49,37 +50,39 @@ public class IAStates : AIPath
         destinationSetter.target = place;
     }
 
+    /// <summary>
+    /// Si se pierde la referencia mientras se están en Chase, se debería volver a GoToWalk
+    /// </summary>
     public void ChasePJ()
     {
         state = IAStatus.Chasing;
         destinationSetter.target = player;
     }
+
+    public void GoToWalk()
+    {
+        state = IAStatus.Idle;
+        destinationSetter.target = sitesM.GetRandomTransformPlace();
+    }
    
     IEnumerator Cooldown(int secs)
     {
         yield return new WaitForSeconds(secs);
+        switch (state)
+        {
+            case IAStatus.Chasing:
+                //llamar a los demás
+                break;
+            case IAStatus.Idle:
+                GoToWalk();
+                break;
+            case IAStatus.Investigating:
+                //arreglar la luz
+                GoToWalk();
+                break;
+        }
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (path == null) return;
-
-    //    if(currentWaypoint >= path.vectorPath.Count)
-    //    {
-    //        reachedEndOfPath = true;
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        reachedEndOfPath = false;
-    //    }
-
-    //    float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
-    //    if (distance < nextWaypointDistance)
-    //    {
-    //        currentWaypoint++;
-    //    }
-    //}
+    
 
 }

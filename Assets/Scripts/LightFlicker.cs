@@ -14,6 +14,15 @@ public class LightFlicker : MonoBehaviour
     private bool InRoom = false;
     public bool IsRepaired = true;
 
+    [Space]
+    public Transform emergencypos;
+
+    SitesManager sitesManager;
+    private void Start()
+    {
+        sitesManager = FindObjectOfType<SitesManager>();
+    }
+
     // Start is called before the first frame update
     private void Update()
     {
@@ -23,6 +32,8 @@ public class LightFlicker : MonoBehaviour
         {
             lightFlicker();
             player.GetComponent<PlayerAbility>().LightCooldown();
+                //Genera una alerta que los enemigos más cercanos irán a revisar
+                sitesManager.LaunchEmergency(emergencypos);
         }   
     }
 
