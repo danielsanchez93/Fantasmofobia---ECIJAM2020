@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 4659716321557981684}
   - component: {fileID: 2599235416842381807}
   - component: {fileID: 4659716321557981680}
+  - component: {fileID: 8415676587623607904}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -193,7 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 4659716321557981687}
-  movementSpeed: 3
+  isFreeze: 0
+  movementSpeed: 5
 --- !u!114 &2599235416842381807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +236,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4838262, y: 1.3597684}
   m_EdgeRadius: 0
+--- !u!114 &8415676587623607904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659716321557981685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1bfd5086316ef47a515be98a7cef80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  crucifijoEnRango: 0
+  detectedBysensor: 0

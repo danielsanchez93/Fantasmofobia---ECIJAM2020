@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
+    public bool isFreeze = false;
     // using a float on movement speed allows us to fine tune the speed better than an Integer would
     public float movementSpeed;
     private Vector2 moveDirection;
@@ -31,7 +32,11 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed);
+        if (!isFreeze)
+        {
+            rigidBody.velocity = new Vector2(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed);
+        }
+        
     }
     #endregion
 }

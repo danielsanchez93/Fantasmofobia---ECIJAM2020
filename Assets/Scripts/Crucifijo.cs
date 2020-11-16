@@ -17,12 +17,12 @@ public class Crucifijo : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         player.GetComponent<SimpleMovement>().crucifijoEnRango = true;
-        if (player.GetComponent<SimpleMovement>().speed > 50)
+        if (player.GetComponent<SimpleMovement>().playerController.movementSpeed > 2.5)
         {
-            player.GetComponent<SimpleMovement>().speed -= 5;
+            player.GetComponent<SimpleMovement>().playerController.movementSpeed -= 0.1f;
         }
         
-        Debug.Log(player.GetComponent<SimpleMovement>().speed);
+        Debug.Log(player.GetComponent<SimpleMovement>().playerController.movementSpeed);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
