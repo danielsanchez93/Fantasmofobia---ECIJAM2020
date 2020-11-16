@@ -11,7 +11,7 @@ public class LightFlicker : MonoBehaviour
     public float MaxLight;
     public float lightWaitTime;
     public float LightCooldown;
-    private bool InRoom = false;
+    public bool InRoom = false;
     public bool IsRepaired = true;
 
     [Space]
@@ -27,14 +27,18 @@ public class LightFlicker : MonoBehaviour
     private void Update()
     {
         //print(InRoom);
-        if(InRoom)
-        if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerAbility>().IsInCooldown == false)
+        if (InRoom) 
         {
-            lightFlicker();
-            player.GetComponent<PlayerAbility>().LightCooldown();
+            if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerAbility>().IsInCooldown == false)
+            {
+                lightFlicker();
+                player.GetComponent<PlayerAbility>().LightCooldown();
                 //Genera una alerta que los enemigos más cercanos irán a revisar
+                emergencypos = transform.parent.gameObject.transform;
                 sitesManager.LaunchEmergency(emergencypos);
-        }   
+            }
+        }
+   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

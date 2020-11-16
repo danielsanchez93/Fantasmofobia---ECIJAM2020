@@ -11,7 +11,7 @@ public class CamaraNPC : MonoBehaviour
     private void Update()
     {
         timeToShoot += Time.deltaTime;
-        if (timeToShoot >=6.5)
+        if (timeToShoot >=4)
         {
             timeToShoot = 0;
         }
@@ -23,9 +23,8 @@ public class CamaraNPC : MonoBehaviour
     {
         Debug.Log("InRangeCamera");
         Debug.Log(collision.tag);
-        if (timeToShoot >=5)
+        if (timeToShoot >=3)
         {
-            Debug.Log("???");
             //GetComponent<PolygonCollider2D>().enabled = false;
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position, 
