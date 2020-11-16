@@ -13,6 +13,9 @@ public class IAStates : AIPath
 
     bool destinationReached;
 
+    [HideInInspector]
+    public LightFlicker RoomToRepair;
+
     //Idle es caminar por ahí, no estar quieto
     public enum IAStatus { Idle, Chasing, Investigating, FollowPJ}
     [Space]
@@ -44,10 +47,11 @@ public class IAStates : AIPath
         }
     }
 
-    public void GoToEmergency(Transform place)
+    public void GoToEmergency(Transform place, LightFlicker RoomTorepair)
     {
         state = IAStatus.Investigating;
         destinationSetter.target = place;
+        RoomToRepair = RoomTorepair;
     }
 
     /// <summary>
@@ -85,6 +89,7 @@ public class IAStates : AIPath
                 break;
             case IAStatus.Investigating:
                 //arreglar la luz
+                if(RoomToRepair!=null)RoomToRepair.IsRepaired = true;
                 GoToWalk();
                 break;
             case IAStatus.FollowPJ:
@@ -98,6 +103,7 @@ public class IAStates : AIPath
         yield return new WaitForSeconds(10f);
         GoToWalk();
     }
+
 
     
 

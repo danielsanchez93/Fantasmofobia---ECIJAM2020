@@ -9,15 +9,15 @@ public class SitesManager : MonoBehaviour
 
     public int radio=15;
 
-    Collider2D[] cols;
-    public void LaunchEmergency(Transform place)
+    GameObject[] cols;
+    public void LaunchEmergency(Transform place,LightFlicker roomToRepair)
     {
-        Physics2D.OverlapCircleNonAlloc(place.position,radio,cols);
-        foreach (Collider2D col in cols)
+        cols = GameObject.FindGameObjectsWithTag("Enemy"); /*Physics2D.OverlapCircleAll(place.position,radio);*/
+        if(cols!=null)foreach (GameObject col in cols)
         {
-            if (col.CompareTag("Enemy"))
+            if (Vector2.Distance(transform.position,col.transform.position)<=30)
             {
-                col.GetComponent<IAStates>().GoToEmergency(place);
+                col.GetComponent<IAStates>().GoToEmergency(place,roomToRepair);
             }
         }
     }

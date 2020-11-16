@@ -34,8 +34,7 @@ public class LightFlicker : MonoBehaviour
                 lightFlicker();
                 player.GetComponent<PlayerAbility>().LightCooldown();
                 //Genera una alerta que los enemigos más cercanos irán a revisar
-                emergencypos = transform.parent.gameObject.transform;
-                sitesManager.LaunchEmergency(emergencypos);
+                sitesManager.LaunchEmergency(emergencypos,this);
             }
         }
    
@@ -55,6 +54,7 @@ public class LightFlicker : MonoBehaviour
 
     private void lightFlicker()
     {
+        IsRepaired = false;
         StartCoroutine("LightTimer");
     }
 
