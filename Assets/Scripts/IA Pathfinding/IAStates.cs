@@ -14,7 +14,7 @@ public class IAStates : AIPath
     bool destinationReached;
 
     //Idle es caminar por ahí, no estar quieto
-    public enum IAStatus { Idle, Chasing, Investigating}
+    public enum IAStatus { Idle, Chasing, Investigating, FollowPJ}
     [Space]
     [Header("States")]
     [UnityEngine.Serialization.FormerlySerializedAs("speed")]
@@ -60,6 +60,12 @@ public class IAStates : AIPath
         StartCoroutine(StopChasing());
     }
 
+    public void FollowPJ() 
+    {
+        state = IAStatus.FollowPJ;
+        destinationSetter.target = player;
+    }
+
     public void GoToWalk()
     {
         state = IAStatus.Idle;
@@ -80,6 +86,9 @@ public class IAStates : AIPath
             case IAStatus.Investigating:
                 //arreglar la luz
                 GoToWalk();
+                break;
+            case IAStatus.FollowPJ:
+                FollowPJ();
                 break;
         }
     }
